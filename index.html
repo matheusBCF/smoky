@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smoky Effect Mirror</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #000;
+            font-family: 'Arial Black', sans-serif;
+            overflow: hidden;
+        }
+
+        .smoke-container {
+            display: flex;
+        }
+
+        .smoke-container span {
+            color: #fff;
+            font-size: 8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            display: inline-block;
+            cursor: default;
+            
+            /* Efeito de volta (Reaparecer) */
+            opacity: 1;
+            filter: blur(0px);
+            transform: translateY(0px) scale(1);
+            transition: all 0.8s ease-out;
+        }
+
+        /* Efeito ao passar o mouse (Desaparecer) */
+        .smoke-container:hover span {
+            opacity: 0;
+            filter: blur(40px);
+            transform: translateY(-150px) scale(1.5);
+            transition: all 0.8s ease-in;
+        }
+
+        /* Configuração de Delays Espelhada 
+           Aplicamos tanto no estado normal quanto no hover 
+        */
+        
+        /* S: 0.6s */
+        .smoke-container span:nth-child(1),
+        .smoke-container:hover span:nth-child(1) { transition-delay: 0.6s; }
+        
+        /* M: 1.0s */
+        .smoke-container span:nth-child(2),
+        .smoke-container:hover span:nth-child(2) { transition-delay: 1.0s; }
+        
+        /* O: 1.4s */
+        .smoke-container span:nth-child(3),
+        .smoke-container:hover span:nth-child(3) { transition-delay: 1.4s; }
+        
+        /* K: 1.8s */
+        .smoke-container span:nth-child(4),
+        .smoke-container:hover span:nth-child(4) { transition-delay: 1.8s; }
+        
+        /* Y: 2.2s */
+        .smoke-container span:nth-child(5),
+        .smoke-container:hover span:nth-child(5) { transition-delay: 2.2s; }
+
+    </style>
+</head>
+<body>
+
+    <div class="smoke-container">
+        <span>S</span>
+        <span>M</span>
+        <span>O</span>
+        <span>K</span>
+        <span>Y</span>
+    </div>
+
+</body>
+</html>
